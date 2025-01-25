@@ -85,29 +85,29 @@ export default function Home() {
             <Image
               src="/1.png"
               alt="Project 1"
-              width={300}
-              height={300}
+              width={391}
+              height={314.5}
               className="rounded-lg object-cover w-full"
             />
             <Image
               src="/2.png"
               alt="Project 2"
-              width={300}
-              height={300}
+              width={391}
+              height={314.5}
               className="rounded-lg object-cover w-full"
             />
             <Image
               src="/3.png"
               alt="Project 3"
-              width={300}
-              height={300}
+              width={391}
+              height={314.5}
               className="rounded-lg object-cover w-full"
             />
             <Image
               src="/4.png"
               alt="Project 4"
-              width={300}
-              height={300}
+              width={391}
+              height={314.5}
               className="rounded-lg object-cover w-full"
             />
           </div>
