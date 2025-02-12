@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import ProductIcon from '@/components/ui/icons/product-icon';
 import Logo from '@/components/ui/icons/logo';
+import { ProjectGallery } from '@/components/gallery/projects-gallery';
 
 export default function Home() {
   return (
@@ -52,72 +53,14 @@ export default function Home() {
                 href='#'
                 className='text-xl text-white dark:text-accent underline mt-16 block'
               >
-                Schedula a meeting
+                Schedule a meeting
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className='grid grid-cols-12 gap-11 py-5 h-full'>
-        <div className='col-span-5 bg-grey-bg p-10 flex flex-col gap-20 justify-between rounded-2xl'>
-          <h2 className='text-5xl text-foreground'>Recent projects:</h2>
-          <div className='space-y-4'>
-            <p className='text-5xl font-light text-grey'>savadeck.com</p>
-            <p className='text-5xl font-light text-grey'>marijavolkman.com</p>
-            <p className='text-5xl font-light text-grey'>roger.rs</p>
-            <p className='text-5xl font-light text-grey'>bopa.rs</p>
-            <p className='text-5xl font-light text-grey'>forests.digital</p>
-            <p className='text-5xl font-light text-grey'>realvibestudio.com</p>
-            <p className='text-5xl font-light text-grey'>
-              hirurgijadrdjokovice.com
-            </p>
-          </div>
-        </div>
-        <div className='col-span-7 flex gap-8 px-10 py-12'>
-          <Button variant='outline' size='sm' className='rounded-full'>
-            Visit website
-          </Button>
-          <div className='grid grid-cols-2 gap-5 w-full'>
-            <div className='relative w-full h-full aspect-[391/314.5]'>
-              <Image
-                src='/1.jpg'
-                alt='Project 1'
-                fill
-                className='rounded-lg object-cover'
-              />
-            </div>
-            <div className='relative w-full h-full aspect-[391/314.5]'>
-              {' '}
-              <Image
-                src='/2.jpg'
-                alt='Project 1'
-                fill
-                className='rounded-lg object-cover'
-              />
-            </div>
-            <div className='relative w-full h-full aspect-[391/314.5]'>
-              {' '}
-              <Image
-                src='/3.jpg'
-                alt='Project 1'
-                fill
-                className='rounded-lg object-cover'
-              />
-            </div>
-            <div className='relative w-full h-full aspect-[391/314.5]'>
-              {' '}
-              <Image
-                src='/4.jpg'
-                alt='Project 1'
-                fill
-                className='rounded-lg object-cover'
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProjectGallery />
 
       {/* Contact Section */}
       <section className='bg-grey-bg rounded-t-2xl mt-5 px-side pt-8 pb-6'>
@@ -126,7 +69,7 @@ export default function Home() {
             <p className='text-sm text-foreground'>Design & Development</p>
             <p className='text-sm text-foreground'>Creative Studio</p>
           </div>
-          <Logo className='absolute left-1/2 -translate-x-1/2' />
+          <Logo className='absolute left-1/2 -translate-x-1/2' size={115} />
           <div className='text-end'>
             <p className='text-sm text-foreground'>Available for projects</p>
             <p className='text-sm text-foreground'>January 2025</p>
@@ -148,8 +91,12 @@ export default function Home() {
         </div>
         <div className='flex justify-between items-center relative'>
           <div>
-            <p className='text-sm text-foreground'>Design: Nikola</p>
-            <p className='text-sm text-foreground'>Development: Igor</p>
+            <p className='text-sm text-foreground'>
+              Design: <span className='underline'>Nikola</span>
+            </p>
+            <p className='text-sm text-foreground'>
+              Development: <span className='underline'>Igor</span>
+            </p>
           </div>
           <Button
             variant='outline'

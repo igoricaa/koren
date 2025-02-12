@@ -1,8 +1,16 @@
-const Logo: React.FC<React.SVGProps<SVGElement>> = () => (
+import React from 'react';
+
+interface LogoProps extends React.SVGProps<SVGElement> {
+  size?: number;
+}
+
+const aspectRatio = 185 / 40;
+
+const Logo: React.FC<LogoProps> = ({ size = 185 }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='185'
-    height='40'
+    width={size}
+    height={size / aspectRatio}
     fill='none'
     viewBox='0 0 185 40'
   >
