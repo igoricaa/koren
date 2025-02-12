@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import ProductIcon from '@/components/ui/icons/product-icon';
 import Logo from '@/components/ui/icons/logo';
 import { ProjectGallery } from '@/components/gallery/projects-gallery';
+import Services from '@/components/services/services';
 
 export default function Home() {
   return (
@@ -28,36 +28,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Services Section */}
-        <div className='col-span-7 bg-grey-bg p-10 rounded-2xl flex justify-between gap-8'>
-          <div className='flex flex-col gap-16 justify-between h-full mt-2'>
-            <h2 className='text-5xl text-foreground'>What we do:</h2>
-            <div className='space-y-4 mt-auto'>
-              <h3 className='text-5xl font-light text-grey'>Web development</h3>
-              <h3 className='text-5xl font-light text-grey'>App development</h3>
-              <h3 className='text-5xl font-light text-grey'>UI/UX Design</h3>
-              <h3 className='text-5xl font-light text-grey'>Product Design</h3>
-              <h3 className='text-5xl font-light text-grey'>Brand Design</h3>
-            </div>
-          </div>
-          <div className='flex flex-col gap-16 justify-between h-full rounded-2xl bg-black/75 p-10 w-4/10'>
-            <ProductIcon />
-            <div>
-              <p className='text-white text-xl'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Link
-                href='#'
-                className='text-xl text-white dark:text-accent underline mt-16 block'
-              >
-                Schedule a meeting
-              </Link>
-            </div>
-          </div>
-        </div>
+        <Services />
       </section>
 
       <ProjectGallery />

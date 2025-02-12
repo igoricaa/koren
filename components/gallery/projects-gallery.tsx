@@ -2,12 +2,14 @@
 
 import { Project } from '@/data';
 import { projects } from '@/data';
-import { Button } from '../ui/button';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { buttonVariants } from '../ui/button';
 export const ProjectGallery = () => {
-  const [selectedProject, setSelectedProject] = useState<string | null>(
+  const [selectedProject, setSelectedProject] = useState<string>(
     projects[0].slug
   );
 
@@ -20,7 +22,7 @@ export const ProjectGallery = () => {
             <p
               key={project.title}
               className={cn(
-                'text-5xl font-light text-grey',
+                'w-fit text-5xl font-light text-grey',
                 selectedProject === project.slug &&
                   'text-black dark:text-accent'
               )}
@@ -32,9 +34,16 @@ export const ProjectGallery = () => {
         </div>
       </div>
       <div className='col-span-7 flex gap-8 px-10 py-12'>
-        <Button variant='outline' size='sm' className='rounded-full'>
+        <Link
+          href={
+            projects.find((project) => project.slug === selectedProject)
+              ?.link ?? ''
+          }
+          target='_blank'
+          className={cn(buttonVariants({ variant: 'outline' }), 'rounded-full')}
+        >
           Visit website
-        </Button>
+        </Link>
         <div className='w-full h-full aspect-[803/651] relative'>
           {projects.map((project: Project) => {
             const projectSlug = project.slug;
