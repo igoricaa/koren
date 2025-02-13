@@ -8,13 +8,18 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { buttonVariants } from '../ui/button';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { Accordion } from '../ui/accordion';
+import ProjectsGalleryMobile from './projects-gallery-mobile';
+
 export const ProjectGallery = () => {
   const [selectedProject, setSelectedProject] = useState<string>(
     projects[0].slug
   );
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
-  return (
-    <section className='grid grid-cols-12 gap-11 py-5 h-full'>
+  return isDesktop ? (
+    <section className='hidden lg:grid grid-cols-12 gap-11 py-5 h-full'>
       <div className='col-span-5 bg-grey-bg p-10 flex flex-col gap-20 justify-between rounded-2xl'>
         <h2 className='text-5xl text-foreground'>Recent projects:</h2>
         <div className='space-y-4'>
@@ -70,6 +75,8 @@ export const ProjectGallery = () => {
         </div>
       </div>
     </section>
+  ) : (
+    <ProjectsGalleryMobile />
   );
 };
 
@@ -92,7 +99,7 @@ const ProjectImage = ({
         isVisible && 'opacity-100 visible blur-none'
       )}
     >
-      <Image src={src} alt={alt} fill className={className} />
+      <Image src={src} alt={alt} fill className={`${className} object-cover`} />
     </div>
   );
 };

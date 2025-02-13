@@ -8,6 +8,7 @@ export type Project = {
   slug: string;
   title: string;
   link: string;
+  categories: { name: string; slug: string }[];
   images: string[];
 };
 
@@ -17,11 +18,19 @@ export const projects: Project[] = [
     title: 'thundertopteam.com',
     link: 'https://thundertopteam.com',
     images: ['/ttt/1.jpg', '/ttt/2.jpg', '/ttt/3.jpg', '/ttt/4.jpg'],
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+    ],
   },
   {
     slug: 'starvision',
     title: 'starvision.rs',
     link: 'https://starvision.rs',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+    ],
     images: [
       '/starvision/1.jpg',
       '/starvision/2.jpg',

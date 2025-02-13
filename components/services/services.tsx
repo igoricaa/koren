@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { Service, services } from '@/data';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const Services = () => {
   const [activeService, setActiveService] = useState<number>(0);
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
-  return (
+  return isDesktop ? (
     <section className='hidden lg:flex justify-between gap-8 col-span-7 bg-grey-bg p-10 rounded-2xl'>
       <div className='flex flex-col gap-16 justify-between h-full mt-2'>
         <p className='text-5xl text-foreground'>What we do:</p>
@@ -34,7 +36,7 @@ const Services = () => {
         ))}
       </div>
     </section>
-  );
+  ) : null;
 };
 
 export default Services;
