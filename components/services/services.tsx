@@ -9,7 +9,7 @@ const Services = () => {
   const [activeService, setActiveService] = useState<number>(0);
 
   return (
-    <section className='col-span-7 bg-grey-bg p-10 rounded-2xl flex justify-between gap-8'>
+    <section className='hidden lg:flex justify-between gap-8 col-span-7 bg-grey-bg p-10 rounded-2xl'>
       <div className='flex flex-col gap-16 justify-between h-full mt-2'>
         <p className='text-5xl text-foreground'>What we do:</p>
         <div className='space-y-4 mt-auto'>
@@ -49,7 +49,7 @@ const ServiceCard = ({
   return (
     <article
       className={cn(
-        'absolute inset-0 flex flex-col gap-16 justify-between rounded-2xl bg-black/75 p-10 transition-all ease-out duration-[1200ms] opacity-0 invisible',
+        'absolute inset-0 flex flex-col gap-16 h-full justify-between rounded-2xl bg-black/75 p-10 transition-all ease-out duration-[1200ms] opacity-0 invisible',
         isActive && 'opacity-100 visible'
       )}
     >
@@ -70,12 +70,12 @@ const ServiceCard = ({
         >
           {service.description}
         </p>
-        <Link
+        {/* <Link
           href='#'
           className='text-xl text-white dark:text-accent underline mt-16 block'
         >
           Schedule a meeting
-        </Link>
+        </Link> */}
       </div>
     </article>
   );

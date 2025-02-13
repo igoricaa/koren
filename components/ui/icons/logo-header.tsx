@@ -1,10 +1,11 @@
-const LogoHeader: React.FC<React.SVGProps<SVGElement>> = () => (
+const LogoHeader: React.FC<React.SVGProps<SVGElement>> = ({ className }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='185'
     height='40'
     fill='none'
     viewBox='0 0 185 40'
+    className={className}
   >
     <path
       className='fill-foreground dark:fill-accent'

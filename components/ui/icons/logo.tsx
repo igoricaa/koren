@@ -6,13 +6,14 @@ interface LogoProps extends React.SVGProps<SVGElement> {
 
 const aspectRatio = 185 / 40;
 
-const Logo: React.FC<LogoProps> = ({ size = 185 }) => (
+const Logo: React.FC<LogoProps> = ({ size = 185, className }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width={size}
     height={size / aspectRatio}
     fill='none'
     viewBox='0 0 185 40'
+    className={className}
   >
     <path className='fill-foreground' d='M27.366 16.08h-6.499V40h6.5z'></path>
     <path
