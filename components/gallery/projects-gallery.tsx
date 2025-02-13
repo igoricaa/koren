@@ -8,8 +8,7 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { buttonVariants } from '../ui/button';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { Accordion } from '../ui/accordion';
+import useMediaQuery from '@/hooks/useMediaQuery';
 import ProjectsGalleryMobile from './projects-gallery-mobile';
 
 export const ProjectGallery = () => {

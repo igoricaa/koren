@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Service, services } from '@/data';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
 const Services = () => {
   const [activeService, setActiveService] = useState<number>(0);
