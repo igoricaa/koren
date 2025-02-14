@@ -1,6 +1,6 @@
 'use client';
 
-import { Project } from '@/data';
+import { categoryColors, Project } from '@/data';
 import { projects } from '@/data';
 
 import Image from 'next/image';
@@ -21,19 +21,46 @@ export const ProjectGallery = () => {
     <section className='hidden lg:grid grid-cols-12 gap-11 py-5 h-full'>
       <div className='col-span-5 bg-grey-bg p-10 flex flex-col gap-20 justify-between rounded-2xl'>
         <h2 className='text-5xl text-foreground'>Recent projects:</h2>
-        <div className='space-y-4'>
+        <div className='space-y-6'>
           {projects.map((project: Project) => (
-            <p
+            <div
               key={project.title}
-              className={cn(
-                'w-fit text-5xl font-light text-grey',
-                selectedProject === project.slug &&
-                  'text-black dark:text-accent'
-              )}
               onMouseEnter={() => setSelectedProject(project.slug)}
+              className='relative w-fit'
             >
-              {project.title}
-            </p>
+              <p
+                className={cn(
+                  'w-fit text-5xl font-light text-grey whitespace-nowrap',
+                  selectedProject === project.slug &&
+                    'text-black dark:text-accent'
+                )}
+              >
+                {project.title}
+              </p>
+
+              {project.categories.map((category, categoryIndex: number) => (
+                <span
+                  key={category.name}
+                  className={cn(
+                    `absolute text-[13px] px-4 py-1 rounded-4xl whitespace-nowrap opacity-0 invisible transition-all duration-200 ease translate-y-2`,
+                    categoryIndex === 0
+                      ? `-top-6 left-1/2 -translate-x-1/2`
+                      : categoryIndex === 1
+                      ? `-top-3 -right-16`
+                      : `-bottom-6 right-1/5`,
+                    selectedProject === project.slug &&
+                      'opacity-100 visible translate-y-0'
+                  )}
+                  style={{
+                    backgroundColor: categoryColors[category.slug].background,
+                    color: categoryColors[category.slug].text,
+                    transitionDelay: `${categoryIndex * 60}ms`,
+                  }}
+                >
+                  {category.name}
+                </span>
+              ))}
+            </div>
           ))}
         </div>
       </div>

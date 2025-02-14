@@ -21,6 +21,7 @@ export const projects: Project[] = [
     categories: [
       { name: 'Web Development', slug: 'web' },
       { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
     ],
   },
   {
@@ -30,6 +31,7 @@ export const projects: Project[] = [
     categories: [
       { name: 'Web Development', slug: 'web' },
       { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
     ],
     images: [
       '/starvision/1.jpg',
@@ -132,3 +134,11 @@ export const projectsTest = [
     color: '#88A28D',
   },
 ];
+
+export const categoryColors: {
+  [key: string]: { text: string; background: string };
+} = {
+  web: { text: 'var(--color-dark-green)', background: 'var(--color-mint)' },
+  brand: { text: 'var(--color-mint)', background: 'var(--color-dark-green)' },
+  design: { text: 'var(--color-black)', background: 'var(--color-khaki)' },
+};
