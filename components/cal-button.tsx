@@ -4,7 +4,17 @@ import { getCalApi } from '@calcom/embed-react';
 import { useEffect } from 'react';
 import { Button } from './ui/button';
 
-export default function CalButton() {
+export default function CalButton({
+  children,
+  variant,
+  size,
+  className,
+}: {
+  children: React.ReactNode;
+  variant?: 'outline' | 'default';
+  size?: 'sm' | null;
+  className?: string;
+}) {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({
@@ -22,13 +32,14 @@ export default function CalButton() {
   }, []);
   return (
     <Button
-      variant='outline'
-      className='rounded-full'
+      variant={variant ?? 'default'}
+      size={size}
+      className={className}
       data-cal-namespace='discovery-session-w-koren-studio'
       data-cal-link='korenstudio/discovery-session-w-koren-studio'
       data-cal-config='{"layout":"month_view","theme":"auto"}'
     >
-      Work with us
+      {children}
     </Button>
   );
 }

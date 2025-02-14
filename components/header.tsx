@@ -10,7 +10,9 @@ export default function Header() {
       </div>
       <div className='flex items-center gap-4'>
         <ThemeSwitcher />
-        <CalButton />
+        <CalButton variant='outline' className='rounded-full'>
+          Work with us
+        </CalButton>
       </div>
     </header>
   );

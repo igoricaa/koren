@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import Logo from '@/components/ui/icons/logo';
 import { ProjectGallery } from '@/components/gallery/projects-gallery';
 import Services from '@/components/services/services';
 import ServicesMobile from '@/components/services/services-mobile';
+import CalButton from '@/components/cal-button';
 
 export default function Home() {
   return (
@@ -81,13 +81,13 @@ export default function Home() {
               Development: <span className='underline'>Igor</span>
             </p>
           </div>
-          <Button
+          <CalButton
             variant='outline'
             size='sm'
             className='rounded-full sm:absolute sm:left-1/2 sm:-translate-x-1/2 order-1 sm:order-2 mb-15 sm:mb-0'
           >
             Schedule a meeting
-          </Button>
+          </CalButton>
           <div className='order-3 sm:order-3 text-center sm:text-end flex flex-col-reverse sm:flex-col'>
             <p className='sm:text-sm text-foreground'>[temporary website]</p>
             <p className='sm:text-sm text-foreground'>
