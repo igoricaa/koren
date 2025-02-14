@@ -11,7 +11,7 @@ export default function Home() {
     <main className='bg-background px-side'>
       {/* Hero Section */}
       <section className='grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-11 pb-5 h-fit'>
-        <div className='col-span-full lg:col-span-5 bg-black dark:bg-grey-bg p-5 pt-7 pb-10 sm:p-8 lg:p-12 rounded-2xl flex flex-col justify-between relative'>
+        <div className='col-span-full lg:col-span-5 bg-black dark:bg-grey-bg p-5 pt-7 pb-10 sm:p-8 lg:p-12 rounded-2xl flex flex-col justify-between relative overflow-hidden'>
           <Image
             src='/roots-bg.png'
             alt='Koren Studio'
