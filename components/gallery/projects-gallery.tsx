@@ -20,7 +20,7 @@ export const ProjectGallery = () => {
   return isDesktop ? (
     <section className='hidden lg:grid grid-cols-12 gap-11 py-5 h-full'>
       <div className='col-span-5 bg-grey-bg p-10 flex flex-col gap-20 justify-between rounded-2xl'>
-        <h2 className='text-5xl text-foreground'>Recent projects:</h2>
+        <p className='text-5xl text-foreground'>Recent projects:</p>
         <div className='space-y-6'>
           {projects.map((project: Project) => (
             <div
@@ -28,7 +28,7 @@ export const ProjectGallery = () => {
               onMouseEnter={() => setSelectedProject(project.slug)}
               className='relative w-fit'
             >
-              <p
+              <h3
                 className={cn(
                   'w-fit text-5xl font-light text-grey whitespace-nowrap',
                   selectedProject === project.slug &&
@@ -36,7 +36,7 @@ export const ProjectGallery = () => {
                 )}
               >
                 {project.title}
-              </p>
+              </h3>
 
               {project.categories.map((category, categoryIndex: number) => (
                 <span
