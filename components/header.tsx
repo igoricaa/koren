@@ -1,6 +1,6 @@
-import { Button } from './ui/button';
 import { ThemeSwitcher } from './theme/theme-switcher';
 import LogoHeader from './ui/icons/logo-header';
+import CalButton from './cal-button';
 
 export default function Header() {
   return (
@@ -10,9 +10,7 @@ export default function Header() {
       </div>
       <div className='flex items-center gap-4'>
         <ThemeSwitcher />
-        <Button variant='outline' className='rounded-full'>
-          Work with us
-        </Button>
+        <CalButton />
       </div>
     </header>
   );
