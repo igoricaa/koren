@@ -120,8 +120,8 @@ const ProjectImage = ({
   return (
     <div
       className={cn(
-        'relative w-full h-full aspect-[391/314.5] transition-all ease-out duration-[1200ms]',
-        'opacity-0 invisible blur-xl',
+        'relative w-full h-full aspect-[391/314.5] transition-all ease-out duration-[1200ms] rounded-[10px] overflow-hidden',
+        'opacity-0 invisible blur',
         isVisible && 'opacity-100 visible blur-none'
       )}
     >
