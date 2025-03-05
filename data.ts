@@ -15,7 +15,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'thundertopteam',
-    title: 'thundertopteam.com',
+    title: 'Thunder Top Team',
     link: 'https://thundertopteam.com',
     images: ['/ttt/1.jpg', '/ttt/2.jpg', '/ttt/3.jpg', '/ttt/4.jpg'],
     categories: [
@@ -26,7 +26,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'starvision',
-    title: 'starvision.rs',
+    title: 'Starvision',
     link: 'https://starvision.rs',
     categories: [
       { name: 'Web Development', slug: 'web' },

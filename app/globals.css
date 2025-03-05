@@ -24,10 +24,14 @@
   --color-dark-green: hsl(var(--dark-green));
   --color-khaki: hsl(var(--khaki));
 
-  --padding-side: 2.5rem;
+  --padding-side: 3rem;
 
   --animate-blurOut: blurOut 2s ease-in-out forwards;
   --animate-blurIn: blurIn 2s ease-in-out forwards;
+
+  --font-neue: var(--font-neuemontreal);
+  --font-bigdailyshort: var(--font-bigdailyshort);
+  --text-xxs: 11px;
 
   @keyframes blurOut {
     0% {

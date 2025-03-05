@@ -1,10 +1,11 @@
-const AppIcon: React.FC<React.SVGProps<SVGElement>> = (props) => (
+const AppIcon: React.FC<React.SVGProps<SVGElement>> = ({ className }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='77'
     height='77'
     fill='none'
     viewBox='0 0 77 77'
+    className={className}
   >
     <path
       fill='#B5FFDC'

@@ -6,8 +6,6 @@ import { projects } from '@/data';
 import Image from 'next/image';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
-import { buttonVariants } from '../ui/button';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ProjectsGalleryMobile from './projects-gallery-mobile';
 
@@ -18,10 +16,10 @@ export const ProjectGallery = () => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   return isDesktop ? (
-    <section className='hidden lg:grid grid-cols-12 gap-11 py-5 h-full'>
-      <div className='col-span-5 bg-grey-bg p-10 flex flex-col gap-20 justify-between rounded-2xl'>
-        <p className='text-5xl text-foreground'>Recent projects:</p>
-        <div className='space-y-6'>
+    <section className='hidden lg:grid grid-cols-12 gap-5 h-full'>
+      <div className='col-span-5 bg-grey-bg py-10 px-6 flex flex-col gap-20 justify-between rounded-2xl'>
+        <p className='text-xl text-foreground'>Recent projects:</p>
+        <div className='space-y-4'>
           {projects.map((project: Project) => (
             <div
               key={project.title}
@@ -30,7 +28,7 @@ export const ProjectGallery = () => {
             >
               <h3
                 className={cn(
-                  'w-fit text-5xl font-light text-grey whitespace-nowrap',
+                  'w-fit text-3xl font-light text-grey whitespace-nowrap',
                   selectedProject === project.slug &&
                     'text-black dark:text-accent'
                 )}
@@ -42,12 +40,12 @@ export const ProjectGallery = () => {
                 <span
                   key={category.name}
                   className={cn(
-                    `absolute text-[13px] px-4 py-1 rounded-4xl whitespace-nowrap opacity-0 invisible transition-all duration-200 ease translate-y-2`,
+                    `absolute text-xxs px-2 py-0.5 rounded-4xl whitespace-nowrap opacity-0 invisible transition-all duration-200 ease translate-y-2`,
                     categoryIndex === 0
-                      ? `-top-6 left-1/2 -translate-x-1/2`
+                      ? `-top-4 left-1/2 -translate-x-1/2`
                       : categoryIndex === 1
-                      ? `-top-3 -right-16`
-                      : `-bottom-6 right-1/5`,
+                      ? `-top-2 -right-16`
+                      : `-bottom-5 right-1/5`,
                     selectedProject === project.slug &&
                       'opacity-100 visible translate-y-0'
                   )}
@@ -64,17 +62,7 @@ export const ProjectGallery = () => {
           ))}
         </div>
       </div>
-      <div className='col-span-7 flex gap-8 px-10 py-12'>
-        <Link
-          href={
-            projects.find((project) => project.slug === selectedProject)
-              ?.link ?? ''
-          }
-          target='_blank'
-          className={cn(buttonVariants({ variant: 'outline' }), 'rounded-full')}
-        >
-          Visit website
-        </Link>
+      <div className='col-span-7 flex gap-5'>
         <div className='w-full h-full aspect-[803/651] relative'>
           {projects.map((project: Project) => {
             const projectSlug = project.slug;

@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 const ProjectsGalleryMobile = () => {
   return (
-    <section className='lg:hidden bg-grey-bg px-side py-4 rounded-2xl'>
+    <section className='lg:hidden bg-grey-bg px-side py-6 rounded-2xl'>
       <p className='text-2xl'>Recent projects</p>
       <Accordion type='single' collapsible className='mt-4'>
         {projects.map((project) => (
