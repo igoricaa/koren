@@ -80,7 +80,7 @@ const ServiceCard = ({
           isActive && 'opacity-100 visible blur-none'
         )}
       >
-        <service.icon className='w-15 h-15' />
+        <service.icon className='size-15' />
       </div>
       <div>
         <p
