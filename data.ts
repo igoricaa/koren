@@ -4,54 +4,6 @@ import AppIcon from './components/ui/icons/services/app-icon';
 import DesignIcon from './components/ui/icons/services/design-icon';
 import BrandIcon from './components/ui/icons/services/brand-icon';
 
-export type Project = {
-  slug: string;
-  title: string;
-  link: string;
-  categories: { name: string; slug: string }[];
-  images: string[];
-};
-
-export const projects: Project[] = [
-  {
-    slug: 'thundertopteam',
-    title: 'Thunder Top Team',
-    link: 'https://thundertopteam.com',
-    images: ['/ttt/1.jpg', '/ttt/2.jpg', '/ttt/3.jpg', '/ttt/4.jpg'],
-    categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
-      { name: 'Brand Design', slug: 'brand' },
-    ],
-  },
-  {
-    slug: 'starvision',
-    title: 'Starvision',
-    link: 'https://starvision.rs',
-    categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
-      { name: 'Brand Design', slug: 'brand' },
-    ],
-    images: [
-      '/starvision/1.jpg',
-      '/starvision/2.jpg',
-      '/starvision/3.jpg',
-      '/starvision/4.jpg',
-    ],
-  },
-];
-
-export const projectColors: {
-  [key: string]: string;
-} = {
-  web: 'var(--color-grey-1)',
-  app: 'var(--color-grey-2)',
-  design: 'var(--color-grey-3)',
-  product: 'var(--color-grey-4)',
-  brand: 'var(--color-grey-5)',
-};
-
 export type Service = {
   slug: string;
   title: string;
@@ -152,4 +104,138 @@ export const categoryColors: {
   web: { text: 'var(--color-dark-green)', background: 'var(--color-mint)' },
   brand: { text: 'var(--color-mint)', background: 'var(--color-dark-green)' },
   design: { text: 'var(--color-black)', background: 'var(--color-khaki)' },
+};
+
+export type Project = {
+  slug: string;
+  title: string;
+  link: string;
+  categories: { name: string; slug: string }[];
+  images: string[];
+};
+
+export const projects: Project[] = [
+  {
+    slug: 'thundertopteam',
+    title: 'Thunder Top Team',
+    link: 'https://thundertopteam.com',
+    images: ['/ttt/1.jpg', '/ttt/2.jpg', '/ttt/3.jpg', '/ttt/4.jpg'],
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+  },
+  {
+    slug: 'forests-digital',
+    title: 'Forests Digital',
+    link: 'https://forests.digital',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+    images: [
+      '/forests-digital/1.jpg',
+      '/forests-digital/2.jpg',
+      '/forests-digital/3.jpg',
+      '/forests-digital/4.jpg',
+    ],
+  },
+  {
+    slug: 'hirurgija-djokovic',
+    title: 'Hirurgija dr. Djokovic',
+    link: 'https://hirurgijadrdjokovic.rs',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+    images: [
+      '/hirurgija-djokovic/1.jpg',
+      '/hirurgija-djokovic/2.jpg',
+      '/hirurgija-djokovic/3.jpg',
+      '/hirurgija-djokovic/4.jpg',
+    ],
+  },
+  {
+    slug: 'lybah',
+    title: 'LYBAH',
+    link: 'https://lybah.rs',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+    images: ['/lybah/1.jpg', '/lybah/2.jpg', '/lybah/3.jpg', '/lybah/4.jpg'],
+  },
+  {
+    slug: 'marija-volkman',
+    title: 'Marija Volkman',
+    link: 'https://marija-volkman.com',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+    images: [
+      '/marija-volkman/1.jpg',
+      '/marija-volkman/2.jpg',
+      '/marija-volkman/3.jpg',
+      '/marija-volkman/4.jpg',
+    ],
+  },
+  {
+    slug: 'realvibe-studio',
+    title: 'RealVibe Studio',
+    link: 'https://realvibestudio.com',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+    images: [
+      '/realvibe-studio/1.jpg',
+      '/realvibe-studio/2.jpg',
+      '/realvibe-studio/3.jpg',
+      '/realvibe-studio/4.jpg',
+    ],
+  },
+  {
+    slug: 'roger',
+    title: 'Roger',
+    link: 'https://roger.rs',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+    images: ['/roger/1.jpg', '/roger/2.jpg', '/roger/3.jpg', '/roger/4.jpg'],
+  },
+  {
+    slug: 'savadeck',
+    title: 'Savadeck',
+    link: 'https://savadeck.com',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+    images: [
+      '/savadeck/1.jpg',
+      '/savadeck/2.jpg',
+      '/savadeck/3.jpg',
+      '/savadeck/4.jpg',
+    ],
+  },
+];
+
+export const projectColors: {
+  [key: string]: string;
+} = {
+  web: 'var(--color-grey-1)',
+  app: 'var(--color-grey-2)',
+  design: 'var(--color-grey-3)',
+  product: 'var(--color-grey-4)',
+  brand: 'var(--color-grey-5)',
 };

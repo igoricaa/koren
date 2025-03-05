@@ -18,7 +18,7 @@ export const ProjectGallery = () => {
   return isDesktop ? (
     <section className='hidden lg:grid grid-cols-12 gap-5 h-full'>
       <div className='col-span-5 bg-grey-bg py-10 px-6 flex flex-col gap-20 justify-between rounded-2xl'>
-        <p className='text-xl text-foreground'>Recent projects:</p>
+        <p className='text-xl 3xl:text-3xl text-foreground'>Recent projects:</p>
         <div className='space-y-4'>
           {projects.map((project: Project) => (
             <div
@@ -28,7 +28,7 @@ export const ProjectGallery = () => {
             >
               <h3
                 className={cn(
-                  'w-fit text-3xl font-light text-grey whitespace-nowrap',
+                  'w-fit text-3xl 3xl:text-5xl font-light text-grey whitespace-nowrap',
                   selectedProject === project.slug &&
                     'text-black dark:text-accent'
                 )}
@@ -36,28 +36,30 @@ export const ProjectGallery = () => {
                 {project.title}
               </h3>
 
-              {project.categories.map((category, categoryIndex: number) => (
-                <span
-                  key={category.name}
-                  className={cn(
-                    `absolute text-xxs px-2 py-0.5 rounded-4xl whitespace-nowrap opacity-0 invisible transition-all duration-200 ease translate-y-2`,
-                    categoryIndex === 0
-                      ? `-top-4 left-1/2 -translate-x-1/2`
-                      : categoryIndex === 1
-                      ? `-top-2 -right-16`
-                      : `-bottom-5 right-1/5`,
-                    selectedProject === project.slug &&
-                      'opacity-100 visible translate-y-0'
-                  )}
-                  style={{
-                    backgroundColor: categoryColors[category.slug].background,
-                    color: categoryColors[category.slug].text,
-                    transitionDelay: `${categoryIndex * 60}ms`,
-                  }}
-                >
-                  {category.name}
-                </span>
-              ))}
+              <div className='absolute top-0 left-0 w-5/6 mr-auto h-[250%] -translate-y-1/4 rounded-lg pill-grid pointer-events-none z-20'>
+                {project.categories.map((category, categoryIndex: number) => (
+                  <span
+                    key={category.name}
+                    className={cn(
+                      `absolute text-xxs 3xl:text-base px-2 3xl:px-4 py-0.5 3xl:py-1 rounded-4xl whitespace-nowrap opacity-0 invisible transition-all duration-200 ease translate-y-2`,
+                      categoryIndex === 0
+                        ? `-top-4 left-1/2 -translate-x-1/2`
+                        : categoryIndex === 1
+                        ? `-top-2 -right-16`
+                        : `-bottom-5 right-1/5`,
+                      selectedProject === project.slug &&
+                        'opacity-100 visible translate-y-0'
+                    )}
+                    style={{
+                      backgroundColor: categoryColors[category.slug].background,
+                      color: categoryColors[category.slug].text,
+                      transitionDelay: `${categoryIndex * 60}ms`,
+                    }}
+                  >
+                    {category.name}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>

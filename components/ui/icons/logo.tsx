@@ -1,58 +1,67 @@
-import React from 'react';
+import { cn } from '@/lib/utils';
 
-interface LogoProps extends React.SVGProps<SVGElement> {
-  size?: number;
-}
-
-const aspectRatio = 185 / 40;
-
-const Logo: React.FC<LogoProps> = ({ size = 185, className }) => (
+const Logo: React.FC<React.SVGProps<SVGElement>> = ({
+  className,
+  markAccent,
+}: {
+  className?: string;
+  markAccent?: boolean;
+}) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    width={size}
-    height={size / aspectRatio}
+    width='185'
+    height='40'
     fill='none'
     viewBox='0 0 185 40'
     className={className}
   >
-    <path className='fill-foreground' d='M27.366 16.08h-6.499V40h6.5z'></path>
     <path
-      className='fill-foreground'
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
+      d='M27.366 16.08h-6.499V40h6.5z'
+    ></path>
+    <path
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
       d='m38.87 35.276 4.595-4.557L26.41 13.804l-4.596 4.558z'
     ></path>
     <path
-      className='fill-foreground'
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
       d='M48.227 19.303v-6.446H24.109v6.446z'
     ></path>
-    <path className='fill-foreground' d='M27.366 0h-6.499v23.92h6.5z'></path>
-    <path className='fill-foreground' d='M0 12.857v6.446h24.118v-6.446z'></path>
+    <path
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
+      d='M27.366 0h-6.499v23.92h6.5z'
+    ></path>
+    <path
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
+      d='M0 12.857v6.446h24.118v-6.446z'
+    ></path>
     <path
       className='fill-foreground'
       d='m4.766 30.713 4.595 4.558 17.054-16.914-4.595-4.558zM61.2 37.566v-24.71h5.38v9.54h3.948l7.303-9.54h6.167l-8.63 11.498 9.373 13.212h-6.412L70.93 27.143H66.59v10.423h-5.390000000000001M98.272 38.155c-2.499 0-4.761-.563-6.788-1.681a12.36 12.36 0 0 1-4.76-4.652c-1.153-1.976-1.73-4.168-1.73-6.585q0-3.625 1.73-6.601a12.3 12.3 0 0 1 4.76-4.679q3.026-1.69 6.788-1.69c2.507 0 4.813.564 6.83 1.69a12.36 12.36 0 0 1 4.761 4.679c1.153 1.983 1.73 4.193 1.73 6.601s-.577 4.61-1.73 6.585a12.36 12.36 0 0 1-4.761 4.652c-2.026 1.126-4.297 1.68-6.83 1.68m0-4.748c1.476 0 2.812-.347 4-1.031a7.3 7.3 0 0 0 2.787-2.885c.672-1.239 1.013-2.66 1.013-4.254s-.341-3.058-1.013-4.306a7.3 7.3 0 0 0-2.787-2.885c-1.188-.684-2.515-1.03-4-1.03s-2.76.346-3.949 1.03c-1.188.685-2.114 1.646-2.786 2.885-.673 1.24-1.014 2.677-1.014 4.306s.332 3.015 1.014 4.254a7.3 7.3 0 0 0 2.786 2.885c1.188.693 2.499 1.031 3.949 1.031M115.471 37.566v-24.71h5.381v3.813H121c.559-1.178 1.441-2.166 2.638-2.955 1.197-.796 2.656-1.195 4.368-1.195h3.389v5.233h-3.73c-1.345 0-2.533.277-3.555.832a6.1 6.1 0 0 0-2.394 2.321q-.864 1.498-.864 3.448v13.212zM160.754 37.566v-24.71h5.381v3.57h.148c.725-1.178 1.782-2.166 3.18-2.963q2.094-1.195 4.961-1.195c3.058 0 5.469.927 7.224 2.763 1.765 1.846 2.638 4.428 2.638 7.754v14.78h-5.424v-14.19c0-2.123-.524-3.709-1.581-4.774q-1.574-1.586-4.342-1.586c-1.284 0-2.437.304-3.45.901q-1.533.91-2.437 2.6c-.611 1.126-.917 2.408-.917 3.838v13.212zM151.118 30.4c-.541.763-1.275 1.422-2.201 1.967-1.188.702-2.638 1.057-4.35 1.057a7.06 7.06 0 0 1-3.503-.91 7.8 7.8 0 0 1-2.69-2.469 7.94 7.94 0 0 1-1.31-3.482h20.492v-1.464c0-2.348-.559-4.514-1.677-6.49a12.16 12.16 0 0 0-4.638-4.652c-1.974-1.126-4.202-1.69-6.665-1.69s-4.639.564-6.613 1.69q-2.96 1.69-4.69 4.679-1.73 2.986-1.73 6.61c0 2.417.576 4.618 1.73 6.584a12.54 12.54 0 0 0 4.69 4.653q2.96 1.689 6.613 1.689 4.992 0 8.176-2.443 2.883-2.223 4.167-5.328h-5.801M138.592 19.91c.655-.884 1.511-1.585 2.542-2.105 1.04-.52 2.184-.789 3.433-.789s2.446.26 3.485.789q1.56.78 2.516 2.105a6.46 6.46 0 0 1 1.206 2.894h-14.571a8.1 8.1 0 0 1 1.381-2.894z'
     ></path>
 
     <path
-      className='fill-foreground'
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
       d='M27.3661 16.0797H20.8672V40H27.3661V16.0797Z'
     />
     <path
-      className='fill-foreground'
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
       d='M38.8694 35.2764L43.4648 30.7186L26.411 13.8044L21.8155 18.3622L38.8694 35.2764Z'
     />
     <path
-      className='fill-foreground'
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
       d='M48.2266 19.3026V12.8568L24.1088 12.8568V19.3026H48.2266Z'
     />
     <path
-      className='fill-foreground'
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
       d='M27.3661 0H20.8672V23.9203H27.3661V0Z'
     />
     <path
-      className='fill-foreground'
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
       d='M0 12.8568L0 19.3026H24.1178V12.8568L0 12.8568Z'
     />
     <path
-      className='fill-foreground'
+      className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}
       d='M4.76587 30.713L9.36133 35.2709L26.4152 18.3567L21.8197 13.7988L4.76587 30.713Z'
     />
     <path

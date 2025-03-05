@@ -12,7 +12,7 @@ const Services = () => {
   return isDesktop ? (
     <section className='hidden lg:flex flex-col justify-between gap-8 col-span-7 bg-grey-bg px-6 pt-10 pb-6 rounded-2xl'>
       <div className='flex flex-col gap-5 mt-2'>
-        <p className='text-2xl text-foreground'>What we do:</p>
+        <p className='text-2xl 3xl:text-3xl text-foreground'>What we do:</p>
         <div className='flex flex-col gap-[10px]'>
           <div className='mt-auto flex flex-wrap gap-[10px]'>
             {services.slice(0, 2).map((service, index) => (
@@ -89,7 +89,7 @@ const ServiceCard = ({
       <div>
         <p
           className={cn(
-            'text-white text-lg transition-all ease-out duration-500 opacity-0',
+            'text-white text-lg 3xl:text-2xl transition-all ease-out duration-500 opacity-0',
             isActive && 'opacity-100'
           )}
         >
