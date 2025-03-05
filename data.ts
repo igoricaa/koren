@@ -41,6 +41,17 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+export const projectColors: {
+  [key: string]: string;
+} = {
+  web: 'var(--color-grey-1)',
+  app: 'var(--color-grey-2)',
+  design: 'var(--color-grey-3)',
+  product: 'var(--color-grey-4)',
+  brand: 'var(--color-grey-5)',
+};
+
 export type Service = {
   slug: string;
   title: string;

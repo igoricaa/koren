@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Service, services } from '@/data';
+import { projectColors, Service, services } from '@/data';
 import { cn } from '@/lib/utils';
 
 const Services = () => {
@@ -14,23 +14,15 @@ const Services = () => {
 
 export default Services;
 
-const colors: {
-  [key: string]: string;
-} = {
-  web: 'var(--color-grey-1)',
-  app: 'var(--color-grey-2)',
-  design: 'var(--color-grey-3)',
-  product: 'var(--color-grey-4)',
-  brand: 'var(--color-grey-5)',
-};
-
 const Card = ({ service, index }: { service: Service; index: number }) => {
   return (
     <article className='w-full h-screen flex items-center justify-center sticky top-0'>
       <div
-        className={cn(`w-full h-[500px] relative px-5 pt-6 pb-9 rounded-2xl flex flex-col justify-between`)}
+        className={cn(
+          `w-full h-[500px] relative px-5 pt-6 pb-9 rounded-2xl flex flex-col justify-between`
+        )}
         style={{
-          backgroundColor: colors[service.color],
+          backgroundColor: projectColors[service.color],
           top: `calc(-15% + ${index * 5}rem)`,
         }}
       >
