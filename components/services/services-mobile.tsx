@@ -4,7 +4,10 @@ import { cn } from '@/lib/utils';
 
 const Services = () => {
   return (
-    <section className='lg:hidden col-span-full mb-5'>
+    <section className='lg:hidden col-span-full '>
+      <p className='lg:hidden col-span-full text-xl text-foreground pl-5 mb-6'>
+        What we do:
+      </p>
       {services.map((service, index) => {
         return <Card key={index} service={service} index={index} />;
       })}
@@ -16,14 +19,14 @@ export default Services;
 
 const Card = ({ service, index }: { service: Service; index: number }) => {
   return (
-    <article className='w-full h-screen flex items-center justify-center sticky top-0'>
+    <article className='w-full h-screen min-h-[500px] flex items-center justify-center sticky top-6'>
       <div
         className={cn(
-          `w-full h-[500px] relative px-5 pt-6 pb-9 rounded-2xl flex flex-col justify-between`
+          `w-full h-[500px] relative px-5 pt-6 pb-9 rounded-2xl flex flex-col gap-[100px] justify-between`
         )}
         style={{
           backgroundColor: projectColors[service.color],
-          top: `calc(-15% + ${index * 5}rem)`,
+          top: `${`calc(-1 * (100vh - 500px)/2 + ${index * 4.9}rem)`}`,
         }}
       >
         <div>

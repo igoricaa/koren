@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import {
   Accordion,
@@ -9,10 +11,42 @@ import { categoryColors, projects } from '@/data';
 import Image from 'next/image';
 import { buttonVariants } from '../ui/button';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const ProjectsGalleryMobile = () => {
+  const [marginTop, setMarginTop] = useState('160px');
+
+  useEffect(() => {
+    const setMargin = () => {
+      const height = window.innerHeight;
+      const referenceHeight = 810;
+      let marginTop = Math.max(70, (referenceHeight - height) * 1.2) + 'px';
+
+      if (height > referenceHeight) {
+        marginTop = (referenceHeight - height) * 1 + 'px';
+      }
+
+      setMarginTop(marginTop);
+    };
+
+    const handleResize = () => {
+      setMargin();
+    };
+
+    window.addEventListener('resize', handleResize);
+    setMargin();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <section className='lg:hidden bg-grey-bg px-side py-6 rounded-2xl'>
+    <section
+      className={cn('lg:hidden bg-grey-bg px-side py-6 rounded-2xl')}
+      style={{
+        marginTop: marginTop,
+      }}
+    >
       <p className='text-2xl'>Recent projects</p>
       <Accordion type='single' collapsible className='mt-4'>
         {projects.map((project) => (

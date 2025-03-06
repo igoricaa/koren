@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className='bg-background px-side space-y-5 pb-3 lg:pb-10'>
       {/* Hero Section */}
-      <section className='grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-4 lg:h-[580px]'>
+      <section className='grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-10 lg:gap-4 lg:h-[580px]'>
         <div className='col-span-full lg:col-span-5 bg-black dark:bg-grey-bg p-5 pt-6 pb-10 sm:p-8 lg:py-10 lg:px-6 rounded-2xl flex flex-col justify-between relative overflow-hidden'>
           <Image
             src='/roots-bg.png'

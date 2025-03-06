@@ -71,7 +71,7 @@ const ServiceCard = ({
   return (
     <article
       className={cn(
-        'absolute inset-0 flex flex-col gap-16 h-full justify-between rounded-2xl p-6 transition-all ease-out duration-500 delay-500 opacity-0',
+        'absolute inset-0 flex flex-col gap-16 h-full justify-between rounded-2xl p-6 transition-all ease-out duration-500 opacity-0',
         isActive && 'opacity-100'
       )}
       style={{
