@@ -33,6 +33,7 @@
   --font-bigdailyshort: var(--font-bigdailyshort);
   --text-xxs: 11px;
 
+  --breakpoint-xs: 410px;
   --breakpoint-3xl: 1920px;
 
   @keyframes blurOut {
