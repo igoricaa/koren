@@ -52,7 +52,7 @@ const ProjectsGalleryMobile = () => {
       <Accordion type='single' collapsible className='mt-4'>
         {projects.map((project) => (
           <AccordionItem key={project.slug} value={project.slug}>
-            <AccordionTrigger className='text-3xl whitespace-nowrap'>
+            <AccordionTrigger className='text-2xl whitespace-nowrap'>
               {project.title}
             </AccordionTrigger>
             <AccordionContent>
