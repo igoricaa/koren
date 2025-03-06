@@ -57,14 +57,14 @@ export const ProjectGallery = () => {
                   <span
                     key={category.name}
                     className={cn(
-                      `absolute text-xxs 3xl:text-base px-2 3xl:px-4 py-0.5 3xl:py-1 rounded-4xl whitespace-nowrap opacity-0 invisible transition-all duration-200 ease translate-y-2`,
+                      `absolute text-xxs 3xl:text-base px-2 3xl:px-4 py-0.5 3xl:py-1 rounded-4xl whitespace-nowrap scale-0 transition-all duration-300 ease`,
                       categoryIndex === 0
                         ? `-top-4 left-1/2 -translate-x-1/2`
                         : categoryIndex === 1
                         ? `-top-2 -right-16`
                         : `-bottom-5 right-1/5`,
                       selectedProject.slug === project.slug &&
-                        'opacity-100 visible translate-y-0'
+                        'scale-100'
                     )}
                     style={{
                       backgroundColor: categoryColors[category.slug].background,

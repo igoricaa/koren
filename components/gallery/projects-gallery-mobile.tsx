@@ -31,14 +31,14 @@ const ProjectsGalleryMobile = () => {
       setMarginTop(marginTop);
     };
 
-    const handleResize = () => {
-      setMargin();
-    };
+    // const handleResize = () => {
+    //   setMargin();
+    // };
 
-    window.addEventListener('resize', handleResize);
+    // window.addEventListener('resize', handleResize);
     setMargin();
 
-    return () => window.removeEventListener('resize', handleResize);
+    // return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
