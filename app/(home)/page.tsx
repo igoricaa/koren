@@ -10,19 +10,20 @@ export default function Home() {
   return (
     <main className='bg-background px-side space-y-5 pb-3 lg:pb-10'>
       {/* Hero Section */}
-      <section className='grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-10 lg:gap-4 lg:h-[580px]'>
+      <section className='grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-10 lg:gap-5 lg:h-[580px]'>
         <div className='col-span-full lg:col-span-5 bg-black dark:bg-grey-bg p-5 pt-6 pb-10 sm:p-8 lg:py-10 lg:px-6 rounded-2xl flex flex-col justify-between relative overflow-hidden'>
           <Image
             src='/roots-bg.png'
             alt='Koren Studio'
             fill
+            sizes='(max-width: 1024px) 100vw, 45vw'
             priority
-            className='object-cover -z-10'
+            className='object-cover'
           />
-          <h1 className='text-[40px] sm:text-[44px] lg:text-5xl 3xl:!text-6xl font-light text-white mb-48 lg:mb-8'>
+          <h1 className='text-[40px] sm:text-[44px] lg:text-5xl 3xl:!text-6xl font-light text-white mb-48 lg:mb-8 z-10'>
             Deeply rooted.
           </h1>
-          <p className='text-white/70 text-lg 3xl:text-2xl'>
+          <p className='text-white/70 text-lg 3xl:text-2xl z-10'>
             We're a creative studio that builds purposeful digital products —
             from creative websites to robust e-commerce solutions, web apps, and
             mobile applications, we deliver seamless experiences.

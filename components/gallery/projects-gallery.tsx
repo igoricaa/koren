@@ -8,28 +8,44 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ProjectsGalleryMobile from './projects-gallery-mobile';
+import { Button, buttonVariants } from '../ui/button';
+import ArrowIcon from '../ui/icons/arrow-icon';
+import Link from 'next/link';
 
 export const ProjectGallery = () => {
-  const [selectedProject, setSelectedProject] = useState<string>(
-    projects[0].slug
-  );
+  const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   return isDesktop ? (
     <section className='hidden lg:grid grid-cols-12 gap-5 h-full'>
       <div className='col-span-5 bg-grey-bg py-10 px-6 flex flex-col gap-20 justify-between rounded-2xl'>
-        <p className='text-xl 3xl:text-3xl text-foreground'>Recent projects:</p>
+        <div className='flex justify-between items-center'>
+          <p className='text-xl 3xl:text-3xl text-foreground'>
+            Recent projects:
+          </p>
+          <Link
+            href={selectedProject.link}
+            target='_blank'
+            className={cn(buttonVariants({ variant: 'textual' }))}
+          >
+            Visit website
+            <ArrowIcon
+              className='size-4 -rotate-45'
+              pathClassName='stroke-black dark:stroke-accent'
+            />
+          </Link>
+        </div>
         <div className='space-y-4'>
           {projects.map((project: Project) => (
             <div
               key={project.title}
-              onMouseEnter={() => setSelectedProject(project.slug)}
+              onMouseEnter={() => setSelectedProject(project)}
               className='relative w-fit'
             >
               <h3
                 className={cn(
                   'w-fit text-3xl 3xl:text-5xl font-light text-grey whitespace-nowrap',
-                  selectedProject === project.slug &&
+                  selectedProject.slug === project.slug &&
                     'text-black dark:text-accent'
                 )}
               >
@@ -47,7 +63,7 @@ export const ProjectGallery = () => {
                         : categoryIndex === 1
                         ? `-top-2 -right-16`
                         : `-bottom-5 right-1/5`,
-                      selectedProject === project.slug &&
+                      selectedProject.slug === project.slug &&
                         'opacity-100 visible translate-y-0'
                     )}
                     style={{
@@ -73,7 +89,7 @@ export const ProjectGallery = () => {
               <div
                 key={projectSlug}
                 className={`absolute inset-0 grid grid-cols-2 gap-5 group ${
-                  selectedProject === project.slug && 'active'
+                  selectedProject.slug === project.slug && 'active'
                 }`}
               >
                 {project.images.map((image, index) => (
@@ -82,7 +98,7 @@ export const ProjectGallery = () => {
                     src={image}
                     alt={project.title}
                     className='w-full h-full object-cover'
-                    isVisible={selectedProject === project.slug}
+                    isVisible={selectedProject.slug === project.slug}
                   />
                 ))}
               </div>
@@ -110,12 +126,18 @@ const ProjectImage = ({
   return (
     <div
       className={cn(
-        'relative w-full h-full aspect-[391/314.5] transition-all ease-out duration-[1200ms] rounded-[10px] overflow-hidden',
+        'relative w-full aspect-[391/315] transition-all ease-out duration-[1200ms] rounded-[10px] overflow-hidden',
         'opacity-0 invisible blur',
         isVisible && 'opacity-100 visible blur-none'
       )}
     >
-      <Image src={src} alt={alt} fill className={`${className} object-cover`} />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes='35vw'
+        className={`${className} object-cover`}
+      />
     </div>
   );
 };

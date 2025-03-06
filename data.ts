@@ -127,6 +127,22 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'marija-volkman',
+    title: 'Marija Volkman',
+    link: 'https://marijavolkman.com/',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+    images: [
+      '/marija-volkman/1.jpg',
+      '/marija-volkman/2.jpg',
+      '/marija-volkman/3.jpg',
+      '/marija-volkman/4.jpg',
+    ],
+  },
+  {
     slug: 'forests-digital',
     title: 'Forests Digital',
     link: 'https://forests.digital',
@@ -143,9 +159,20 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'roger',
+    title: 'Roger',
+    link: 'https://roger.rs',
+    categories: [
+      { name: 'Web Development', slug: 'web' },
+      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Brand Design', slug: 'brand' },
+    ],
+    images: ['/roger/1.jpg', '/roger/2.jpg', '/roger/3.jpg', '/roger/4.jpg'],
+  },
+  {
     slug: 'hirurgija-djokovic',
     title: 'Hirurgija dr. Djokovic',
-    link: 'https://hirurgijadrdjokovic.rs',
+    link: 'https://hirurgijadrdjokovic.com/',
     categories: [
       { name: 'Web Development', slug: 'web' },
       { name: 'UI/UX Design', slug: 'design' },
@@ -169,22 +196,7 @@ export const projects: Project[] = [
     ],
     images: ['/lybah/1.jpg', '/lybah/2.jpg', '/lybah/3.jpg', '/lybah/4.jpg'],
   },
-  {
-    slug: 'marija-volkman',
-    title: 'Marija Volkman',
-    link: 'https://marija-volkman.com',
-    categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
-      { name: 'Brand Design', slug: 'brand' },
-    ],
-    images: [
-      '/marija-volkman/1.jpg',
-      '/marija-volkman/2.jpg',
-      '/marija-volkman/3.jpg',
-      '/marija-volkman/4.jpg',
-    ],
-  },
+
   {
     slug: 'realvibe-studio',
     title: 'RealVibe Studio',
@@ -200,17 +212,6 @@ export const projects: Project[] = [
       '/realvibe-studio/3.jpg',
       '/realvibe-studio/4.jpg',
     ],
-  },
-  {
-    slug: 'roger',
-    title: 'Roger',
-    link: 'https://roger.rs',
-    categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
-      { name: 'Brand Design', slug: 'brand' },
-    ],
-    images: ['/roger/1.jpg', '/roger/2.jpg', '/roger/3.jpg', '/roger/4.jpg'],
   },
   {
     slug: 'savadeck',

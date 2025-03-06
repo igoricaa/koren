@@ -10,21 +10,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: 'bg-accent text-black hover:bg-accent/80',
-        // destructive:
-        //   'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline:
           'border border-black dark:border-accent bg-transparent text-black dark:text-accent hover:bg-black dark:hover:bg-accent hover:text-white dark:hover:text-accent-foreground',
-        // secondary:
-        //   'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        // ghost: 'hover:bg-accent hover:text-accent-foreground',
-        // link: 'text-primary underline-offset-4 hover:underline',
+        textual:
+          'text-foreground dark:text-accent 3xl:text-2xl flex gap-1 relative after:content-[""] after:absolute after:bottom-1 after:left-0 after:h-[1px] after:w-full after:bg-black dark:after:bg-accent rounded-none !p-0 !h-fit w-fit',
       },
       size: {
         default:
           'h-11 px-5 py-4 sm:h-12 sm:px-6 sm:py-4 lg:h-14 lg:px-10 lg:py-4',
         sm: 'h-12 px-6 py-3',
-        // lg: 'h-11 rounded-md px-8',
-        // icon: 'h-10 w-10',
       },
     },
     defaultVariants: {

@@ -1,12 +1,10 @@
 import { cn } from '@/lib/utils';
 
-const Logo: React.FC<React.SVGProps<SVGElement>> = ({
-  className,
-  markAccent,
-}: {
-  className?: string;
+interface LogoProps extends React.SVGProps<SVGSVGElement> {
   markAccent?: boolean;
-}) => (
+}
+
+const Logo: React.FC<LogoProps> = ({ className, markAccent, ...props }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='185'
@@ -14,6 +12,7 @@ const Logo: React.FC<React.SVGProps<SVGElement>> = ({
     fill='none'
     viewBox='0 0 185 40'
     className={className}
+    {...props}
   >
     <path
       className={cn(`fill-foreground ${markAccent ? 'dark:fill-accent' : ''}`)}

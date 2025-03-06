@@ -13,6 +13,7 @@ import { buttonVariants } from '../ui/button';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import ArrowIcon from '../ui/icons/arrow-icon';
 
 const ProjectsGalleryMobile = () => {
   const [marginTop, setMarginTop] = useState('160px');
@@ -77,12 +78,13 @@ const ProjectsGalleryMobile = () => {
               <Link
                 href={project.link}
                 target='_blank'
-                className={cn(
-                  buttonVariants({ variant: 'outline' }),
-                  'rounded-full w-full mt-9'
-                )}
+                className={cn(buttonVariants({ variant: 'textual' }), 'mt-8')}
               >
                 Visit website
+                <ArrowIcon
+                  className='size-4 -rotate-45'
+                  pathClassName='stroke-black dark:stroke-accent'
+                />
               </Link>
             </AccordionContent>
           </AccordionItem>
@@ -106,13 +108,14 @@ const ProjectImage = ({
   return (
     <div
       className={cn(
-        'relative w-full h-full aspect-[391/314.5] transition-all ease-out duration-[1200ms]'
+        'relative w-full aspect-[391/315] transition-all ease-out duration-[1200ms]'
       )}
     >
       <Image
         src={src}
         alt={alt}
         fill
+        sizes='50vw'
         className={`${className} object-cover rounded-xl`}
       />
     </div>
