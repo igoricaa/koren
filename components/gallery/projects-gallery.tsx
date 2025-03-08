@@ -26,11 +26,11 @@ export const ProjectGallery = () => {
           <Link
             href={selectedProject.link}
             target='_blank'
-            className={cn(buttonVariants({ variant: 'textual' }))}
+            className={cn(buttonVariants({ variant: 'textual' }), 'group')}
           >
             Visit website
             <ArrowIcon
-              className='size-4 -rotate-45'
+              className='size-4 -rotate-45 group-hover:rotate-0 transition-all ease duration-300'
               pathClassName='stroke-black dark:stroke-accent'
             />
           </Link>
@@ -63,8 +63,7 @@ export const ProjectGallery = () => {
                         : categoryIndex === 1
                         ? `-top-2 -right-16`
                         : `-bottom-5 right-1/5`,
-                      selectedProject.slug === project.slug &&
-                        'scale-100'
+                      selectedProject.slug === project.slug && 'scale-100'
                     )}
                     style={{
                       backgroundColor: categoryColors[category.slug].background,
