@@ -34,7 +34,8 @@
   --text-xxs: 11px;
 
   --breakpoint-xs: 410px;
-  --breakpoint-3xl: 1920px;
+  --breakpoint-3xl: 1700px;
+  --breakpoint-4xl: 1920px;
 
   @keyframes blurOut {
     0% {

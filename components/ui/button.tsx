@@ -13,7 +13,7 @@ const buttonVariants = cva(
         outline:
           'border border-black dark:border-accent bg-transparent text-black dark:text-accent hover:bg-black dark:hover:bg-accent hover:text-white dark:hover:text-accent-foreground',
         textual:
-          'text-foreground dark:text-accent 3xl:text-2xl flex gap-1 relative after:content-[""] after:absolute after:bottom-1 after:left-0 after:h-[1px] after:w-full after:bg-black dark:after:bg-accent rounded-none !p-0 !h-fit w-fit',
+          'text-foreground dark:text-accent 4xl:text-2xl flex gap-1 relative after:content-[""] after:absolute after:bottom-1 after:left-0 after:h-[1px] after:w-full after:bg-black dark:after:bg-accent rounded-none !p-0 !h-fit w-fit',
       },
       size: {
         default:

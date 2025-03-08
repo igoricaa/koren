@@ -20,7 +20,7 @@ export const ProjectGallery = () => {
     <section className='hidden lg:grid grid-cols-12 gap-5 h-full'>
       <div className='col-span-5 bg-grey-bg py-10 px-6 flex flex-col gap-20 justify-between rounded-2xl'>
         <div className='flex justify-between items-center'>
-          <p className='text-xl 3xl:text-3xl text-foreground'>
+          <p className='text-xl 4xl:text-3xl text-foreground'>
             Recent projects:
           </p>
           <Link
@@ -44,7 +44,7 @@ export const ProjectGallery = () => {
             >
               <h3
                 className={cn(
-                  'w-fit text-3xl 3xl:text-5xl font-light text-grey whitespace-nowrap',
+                  'w-fit text-3xl lg:text-4xl xl:text-[40px] 2xl:text-5xl 3xl:!text-6xl 4xl:!text-[64px] font-light text-grey whitespace-nowrap',
                   selectedProject.slug === project.slug &&
                     'text-black dark:text-accent'
                 )}
@@ -57,7 +57,7 @@ export const ProjectGallery = () => {
                   <span
                     key={category.name}
                     className={cn(
-                      `absolute text-xxs 3xl:text-base px-2 3xl:px-4 py-0.5 3xl:py-1 rounded-4xl whitespace-nowrap scale-0 transition-all duration-300 ease`,
+                      `absolute text-xxs 4xl:text-base px-2 4xl:px-4 py-0.5 4xl:py-1 rounded-4xl whitespace-nowrap scale-0 transition-all duration-300 ease`,
                       categoryIndex === 0
                         ? `-top-4 left-1/2 -translate-x-1/2`
                         : categoryIndex === 1
