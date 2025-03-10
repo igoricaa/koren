@@ -111,6 +111,7 @@ export type Project = {
   title: string;
   link: string;
   categories: { name: string; slug: string }[];
+  categoriesPositions: string[];
   images: string[];
 };
 
@@ -121,19 +122,24 @@ export const projects: Project[] = [
     link: 'https://thundertopteam.com',
     images: ['/ttt/1.jpg', '/ttt/2.jpg', '/ttt/3.jpg', '/ttt/4.jpg'],
     categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
-      { name: 'Brand Design', slug: 'brand' },
+      { name: 'Website Design & Dev', slug: 'web' },
+      { name: 'UX/UI Design', slug: 'design' },
     ],
+    categoriesPositions: [`-top- left-1`, 'top-2 -right-16'],
   },
   {
     slug: 'marija-volkman',
     title: 'Marija Volkman',
     link: 'https://marijavolkman.com/',
     categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'UX/UI Design', slug: 'design' },
       { name: 'Brand Design', slug: 'brand' },
+      { name: 'Website Design & Dev', slug: 'web' },
+    ],
+    categoriesPositions: [
+      `-top-0 left-16`,
+      '-bottom-4 -right-20',
+      '-bottom-5 left-0',
     ],
     images: [
       '/marija-volkman/1.jpg',
@@ -147,9 +153,14 @@ export const projects: Project[] = [
     title: 'Forests Digital',
     link: 'https://forests.digital',
     categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
       { name: 'Brand Design', slug: 'brand' },
+      { name: 'Website Design & Dev', slug: 'web' },
+      { name: 'UX/UI Design', slug: 'design' },
+    ],
+    categoriesPositions: [
+      `-top-0 left-1/2 -translate-x-1/2`,
+      '-bottom-4 -right-16',
+      '-bottom-2 left-0',
     ],
     images: [
       '/forests-digital/1.jpg',
@@ -163,9 +174,14 @@ export const projects: Project[] = [
     title: 'Roger',
     link: 'https://roger.rs',
     categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'UX/UI Design', slug: 'design' },
+      { name: 'Website Design & Dev', slug: 'web' },
       { name: 'Brand Design', slug: 'brand' },
+    ],
+    categoriesPositions: [
+      `-top-2 left-1/2 -translate-x-1/2`,
+      'top-6 -right-50',
+      '-bottom-5 right-1/5',
     ],
     images: ['/roger/1.jpg', '/roger/2.jpg', '/roger/3.jpg', '/roger/4.jpg'],
   },
@@ -174,9 +190,14 @@ export const projects: Project[] = [
     title: 'Hirurgija dr. Djokovic',
     link: 'https://hirurgijadrdjokovic.com/',
     categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Website Design & Dev', slug: 'web' },
       { name: 'Brand Design', slug: 'brand' },
+      { name: 'UX/UI Design', slug: 'design' },
+    ],
+    categoriesPositions: [
+      `-top-2 left-1/2 -translate-x-1/2`,
+      '-top-0 -right-16',
+      '-bottom-7 right-1/5',
     ],
     images: [
       '/hirurgija-djokovic/1.jpg',
@@ -190,9 +211,14 @@ export const projects: Project[] = [
     title: 'LYBAH',
     link: 'https://lybah.rs',
     categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
+      { name: 'Website Design & Dev', slug: 'web' },
       { name: 'Brand Design', slug: 'brand' },
+      { name: 'UX/UI Design', slug: 'design' },
+    ],
+    categoriesPositions: [
+      `-top-3 left-1/2 -translate-x-1/2`,
+      'bottom-4 -right-36',
+      '-bottom-4 right-1/5',
     ],
     images: ['/lybah/1.jpg', '/lybah/2.jpg', '/lybah/3.jpg', '/lybah/4.jpg'],
   },
@@ -202,9 +228,12 @@ export const projects: Project[] = [
     title: 'RealVibe Studio',
     link: 'https://realvibestudio.com',
     categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
-      { name: 'Brand Design', slug: 'brand' },
+      { name: 'UX/UI Design', slug: 'design' },
+      { name: 'Website Design & Dev', slug: 'web' },
+    ],
+    categoriesPositions: [
+      `-top-2 left-1/2 -translate-x-1/2`,
+      '-bottom-0 -right-16',
     ],
     images: [
       '/realvibe-studio/1.jpg',
@@ -218,9 +247,14 @@ export const projects: Project[] = [
     title: 'Savadeck',
     link: 'https://savadeck.com',
     categories: [
-      { name: 'Web Development', slug: 'web' },
-      { name: 'UI/UX Design', slug: 'design' },
       { name: 'Brand Design', slug: 'brand' },
+      { name: 'UX/UI Design', slug: 'design' },
+      { name: 'Website Design & Dev', slug: 'web' },
+    ],
+    categoriesPositions: [
+      `-top-2 -left-2`,
+      '-top-0 -right-16',
+      '-bottom-1 right-1/5',
     ],
     images: [
       '/savadeck/1.jpg',

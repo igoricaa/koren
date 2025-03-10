@@ -4,17 +4,40 @@ import { categoryColors, Project } from '@/data';
 import { projects } from '@/data';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ProjectsGalleryMobile from './projects-gallery-mobile';
-import { Button, buttonVariants } from '../ui/button';
+import { buttonVariants } from '../ui/button';
 import ArrowIcon from '../ui/icons/arrow-icon';
 import Link from 'next/link';
 
 export const ProjectGallery = () => {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
+  const [categoriesPositions, setCategoriesPositions] = useState({
+    x: 0,
+    y: 0,
+  });
+  const ref = useRef<HTMLDivElement>(null);
   const isDesktop = useMediaQuery('(min-width: 1024px)');
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { height, width, left, top } = ref.current!.getBoundingClientRect();
+      const { clientX, clientY } = e;
+
+      const middleX = clientX - (left + width / 2);
+      const middleY = clientY - (top + height / 2);
+
+      const moveX = (middleX / (width / 2)) * 3;
+      const moveY = (middleY / height) * 5;
+
+      setCategoriesPositions({ x: moveX, y: moveY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return isDesktop ? (
     <section className='hidden lg:grid grid-cols-12 gap-5 h-full'>
@@ -52,17 +75,20 @@ export const ProjectGallery = () => {
                 {project.title}
               </h3>
 
-              <div className='absolute top-0 left-0 w-5/6 mr-auto h-[250%] -translate-y-1/4 rounded-lg pill-grid pointer-events-none z-20'>
+              <div
+                ref={ref}
+                className='absolute top-0 left-0 w-full mr-auto h-[250%] -translate-y-1/4 rounded-lg pill-grid pointer-events-none z-20'
+                style={{
+                  transform: `translate(${categoriesPositions.x}px, ${categoriesPositions.y}px)`,
+                }}
+              >
                 {project.categories.map((category, categoryIndex: number) => (
                   <span
                     key={category.name}
                     className={cn(
-                      `absolute text-xxs 4xl:text-base px-2 4xl:px-4 py-0.5 4xl:py-1 rounded-4xl whitespace-nowrap scale-0 transition-all duration-300 ease`,
-                      categoryIndex === 0
-                        ? `-top-4 left-1/2 -translate-x-1/2`
-                        : categoryIndex === 1
-                        ? `-top-2 -right-16`
-                        : `-bottom-5 right-1/5`,
+                      `absolute text-xxs xl:text-base px-2 xl:px-4 py-0.5 xl:py-1.5 rounded-4xl whitespace-nowrap scale-0 transition-all duration-300 ease`,
+                      project.categoriesPositions[categoryIndex],
+
                       selectedProject.slug === project.slug && 'scale-100'
                     )}
                     style={{
