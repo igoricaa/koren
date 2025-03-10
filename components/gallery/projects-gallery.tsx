@@ -113,8 +113,8 @@ export const ProjectGallery = () => {
             return (
               <div
                 key={projectSlug}
-                className={`absolute inset-0 grid grid-cols-2 gap-5 group ${
-                  selectedProject.slug === project.slug && 'active'
+                className={`absolute inset-0 grid grid-cols-2 gap-5 group invisible opacity-0 ${
+                  selectedProject.slug === project.slug && 'active visible opacity-100'
                 }`}
               >
                 {project.images.map((image, index) => (
