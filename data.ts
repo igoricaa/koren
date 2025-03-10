@@ -104,6 +104,7 @@ export const categoryColors: {
   web: { text: 'var(--color-dark-green)', background: 'var(--color-mint)' },
   brand: { text: 'var(--color-mint)', background: 'var(--color-dark-green)' },
   design: { text: 'var(--color-black)', background: 'var(--color-khaki)' },
+  product: { text: 'var(--color-white)', background: 'var(--color-grey-5)' },
 };
 
 export type Project = {
@@ -249,12 +250,14 @@ export const projects: Project[] = [
     categories: [
       { name: 'Brand Design', slug: 'brand' },
       { name: 'UX/UI Design', slug: 'design' },
+      { name: 'Product Design', slug: 'product' },
       { name: 'Website Design & Dev', slug: 'web' },
     ],
     categoriesPositions: [
       `-top-2 -left-2`,
       '-top-0 -right-16',
-      '-bottom-1 right-1/5',
+      'bottom-4 left-0',
+      '-bottom-1 -right-16',
     ],
     images: [
       '/savadeck/1.jpg',

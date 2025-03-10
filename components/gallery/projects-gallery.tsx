@@ -122,7 +122,6 @@ export const ProjectGallery = () => {
                     key={index}
                     src={image}
                     alt={project.title}
-                    className='w-full h-full object-cover'
                     isVisible={selectedProject.slug === project.slug}
                   />
                 ))}
