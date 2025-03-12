@@ -6,6 +6,7 @@ import Services from '@/components/services/services';
 import ServicesMobile from '@/components/services/services-mobile';
 import CalButton from '@/components/cal-button';
 import HoverCircle from '@/components/hover-circle';
+import { AnimatedText } from '@/components/animated-text';
 
 export default function Home() {
   return (
@@ -90,7 +91,7 @@ export default function Home() {
             size='sm'
             className='rounded-full sm:absolute sm:left-1/2 sm:-translate-x-1/2 order-1 sm:order-2 mb-15 sm:mb-0'
           >
-            Schedule a meeting
+            <AnimatedText text='Schedule a meeting' className='leading-5' />
           </CalButton>
           <div className='order-3 sm:order-3 text-center sm:text-end flex flex-col-reverse sm:flex-col'>
             <p className='sm:text-xs 4xl:!text-base text-foreground'>
