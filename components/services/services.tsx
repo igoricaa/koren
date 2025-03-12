@@ -1,13 +1,20 @@
 'use client';
 
 import { projectColors, Service, services } from '@/data';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import useMediaQuery from '@/hooks/useMediaQuery';
 
 const Services = () => {
   const [activeService, setActiveService] = useState<number>(0);
+  const [isMounted, setIsMounted] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 1024px)');
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   return isDesktop ? (
     <section className='hidden lg:flex flex-col justify-between gap-8 col-span-7 bg-grey-bg px-6 pt-10 pb-6 rounded-2xl'>

@@ -277,3 +277,5 @@ export const projectColors: {
   product: 'var(--color-grey-4)',
   brand: 'var(--color-grey-5)',
 };
+
+export const email = 'hello@koren.digital';

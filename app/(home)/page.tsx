@@ -5,6 +5,7 @@ import { ProjectGallery } from '@/components/gallery/projects-gallery';
 import Services from '@/components/services/services';
 import ServicesMobile from '@/components/services/services-mobile';
 import CalButton from '@/components/cal-button';
+import HoverCircle from '@/components/hover-circle';
 
 export default function Home() {
   return (
@@ -48,22 +49,26 @@ export default function Home() {
             January 2025
           </p>
         </div>
-        <div className='text-center mt-15 sm:mt-25 lg:mt-40 mb-8 sm:mb-20 lg:mb-28'>
-          <h2 className='text-3xl 4xl:text-5xl mb-4'>
-            Interested in
-            <br />
-            working together?
-          </h2>
-          <p className='text-2xl lg:text-lg 4xl:!text-2xl text-grey mb-1'>
-            Drop us an email:
-          </p>
-          <Link
-            href='mailto:hello@koren.digital'
-            className='text-xl 4xl:!text-3xl text-foreground underline'
-          >
-            hello@koren.digital
-          </Link>
-        </div>
+
+        <HoverCircle>
+          <div className='text-center mt-15 sm:mt-25 lg:mt-40 mb-8 sm:mb-20 lg:mb-28'>
+            <h2 className='text-3xl lg:text-5xl 4xl:!text-6xl mb-4'>
+              Interested in
+              <br />
+              working together?
+            </h2>
+
+            <p className='text-2xl lg:text-lg 4xl:!text-2xl text-grey mb-1'>
+              Drop us an email:
+            </p>
+            <Link
+              href='mailto:hello@koren.digital'
+              className='text-xl 4xl:!text-3xl text-foreground underline'
+            >
+              hello@koren.digital
+            </Link>
+          </div>
+        </HoverCircle>
         <div className='flex flex-col sm:flex-row justify-between items-center relative'>
           <div className='order-2 sm:order-1 text-center sm:text-start'>
             <p className='sm:text-xs 4xl:!text-base text-foreground'>

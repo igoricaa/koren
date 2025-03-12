@@ -19,11 +19,19 @@ export const ProjectGallery = () => {
     y: 0,
   });
   const ref = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const activeProjectRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const { height, width, left, top } = ref.current!.getBoundingClientRect();
+      if (!ref.current) return;
+
+      const { height, width, left, top } = ref.current.getBoundingClientRect();
       const { clientX, clientY } = e;
 
       const middleX = clientX - (left + width / 2);
@@ -35,9 +43,21 @@ export const ProjectGallery = () => {
       setCategoriesPositions({ x: moveX, y: moveY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+    if (isDesktop && isMounted && activeProjectRef.current) {
+      activeProjectRef.current.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      if (activeProjectRef.current) {
+        activeProjectRef.current.removeEventListener(
+          'mousemove',
+          handleMouseMove
+        );
+      }
+    };
+  }, [isDesktop, isMounted, selectedProject]);
+
+  if (!isMounted) return null;
 
   return isDesktop ? (
     <section className='hidden lg:grid grid-cols-12 gap-5 h-full'>
@@ -62,6 +82,9 @@ export const ProjectGallery = () => {
           {projects.map((project: Project) => (
             <div
               key={project.title}
+              ref={
+                selectedProject.slug === project.slug ? activeProjectRef : null
+              }
               onMouseEnter={() => setSelectedProject(project)}
               className='relative w-fit'
             >
@@ -114,7 +137,8 @@ export const ProjectGallery = () => {
               <div
                 key={projectSlug}
                 className={`absolute inset-0 grid grid-cols-2 gap-5 group invisible opacity-0 ${
-                  selectedProject.slug === project.slug && 'active visible opacity-100'
+                  selectedProject.slug === project.slug &&
+                  'active visible opacity-100'
                 }`}
               >
                 {project.images.map((image, index) => (
