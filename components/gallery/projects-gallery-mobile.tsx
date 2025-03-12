@@ -11,12 +11,14 @@ import { categoryColors, projects } from '@/data';
 import Image from 'next/image';
 import { buttonVariants } from '../ui/button';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useState } from 'react';
 import ArrowIcon from '../ui/icons/arrow-icon';
 
 const ProjectsGalleryMobile = () => {
   const [marginTop, setMarginTop] = useState('160px');
+  const [activeAccordion, setActiveAccordion] = useState(projects[0].slug);
+  const accordionRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   useEffect(() => {
     const setMargin = () => {
@@ -34,6 +36,19 @@ const ProjectsGalleryMobile = () => {
     setMargin();
   }, []);
 
+  const handleAccordionToggle = (value: string) => {
+    setActiveAccordion(value);
+
+    if (value && value !== '') {
+      setTimeout(() => {
+        accordionRefs.current[value]?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }, 150);
+    }
+  };
+
   return (
     <section
       className={cn('lg:hidden bg-grey-bg px-side py-6 rounded-2xl')}
@@ -42,9 +57,22 @@ const ProjectsGalleryMobile = () => {
       }}
     >
       <p className='text-2xl'>Recent projects</p>
-      <Accordion type='single' collapsible className='mt-4' defaultValue={projects[0].slug}>
+      <Accordion
+        type='single'
+        collapsible
+        className='mt-4'
+        defaultValue={projects[0].slug}
+        value={activeAccordion}
+        onValueChange={handleAccordionToggle}
+      >
         {projects.map((project) => (
-          <AccordionItem key={project.slug} value={project.slug}>
+          <AccordionItem
+            key={project.slug}
+            value={project.slug}
+            ref={(el) => {
+              accordionRefs.current[project.slug] = el;
+            }}
+          >
             <AccordionTrigger className='text-[26px] xs:text-3xl whitespace-nowrap'>
               {project.title}
             </AccordionTrigger>
