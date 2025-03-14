@@ -17,7 +17,7 @@ export const services: Service[] = [
     slug: 'web-development',
     title: 'Web Development',
     description:
-      'We build websites that are fast, secure, and easy to maintain. We build websites that are fast, secure, and easy to maintain. We build websites that are fast, secure, and easy to maintain.',
+      "We build high-performance, user-friendly websites tailored to your business needs. Whether it's a corporate site, eCommerce platform, or custom web solution, we ensure seamless functionality, fast loading times, and an engaging user experience. Our approach blends creativity with technical expertise to deliver digital experiences that drive results.",
     icon: WebsiteIcon,
     color: 'web',
   },
@@ -25,7 +25,7 @@ export const services: Service[] = [
     slug: 'app-development',
     title: 'App Development',
     description:
-      'We build apps that are fast, secure, and easy to maintain. We build apps that are fast, secure, and easy to maintain. We build apps that are fast, secure, and easy to maintain.',
+      "We develop intuitive, high-performing applications designed for seamless user experiences. Whether it's a mobile or web app, we focus on functionality, speed, and scalability to ensure your product meets the demands of modern users. From concept to launch, we turn ideas into powerful digital solutions that help businesses grow.",
     icon: AppIcon,
     color: 'app',
   },
@@ -33,7 +33,7 @@ export const services: Service[] = [
     slug: 'ui-ux-design',
     title: 'UI/UX Design',
     description:
-      'We design user interfaces that are easy to use and navigate. We design user interfaces that are easy to use and navigate. We design user interfaces that are easy to use and navigate.',
+      "Great design goes beyond aesthetics—it's about creating experiences that feel effortless. We focus on intuitive navigation, user-friendly interfaces, and visually compelling layouts to maximize engagement. By blending design thinking with data-driven insights, we craft digital products that users love and businesses thrive on.",
     icon: DesignIcon,
     color: 'design',
   },
@@ -41,7 +41,7 @@ export const services: Service[] = [
     slug: 'product-design',
     title: 'Product Design',
     description:
-      'We design products that are easy to use and navigate. We design products that are easy to use and navigate. We design products that are easy to use and navigate.',
+      "From idea to launch, we turn concepts into fully functional digital products. Our process involves research, prototyping, testing, and iteration to ensure market fit and exceptional user experience. Whether you're building an MVP or refining an existing product, we help shape solutions that are both innovative and impactful.",
     icon: ProductIcon,
     color: 'product',
   },
@@ -49,7 +49,7 @@ export const services: Service[] = [
     slug: 'brand-design',
     title: 'Brand Design',
     description:
-      'We design brands that are easy to use and navigate. We design brands that are easy to use and navigate. We design brands that are easy to use and navigate.',
+      "A strong brand is more than a logo—it's an identity. We create cohesive visual languages that tell your story and resonate with your audience. From logos and typography to full brand guidelines, we ensure consistency and authenticity across all touchpoints, helping your brand stand out and leave a lasting impression.",
     icon: BrandIcon,
     color: 'brand',
   },
