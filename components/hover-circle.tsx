@@ -1,63 +1,45 @@
 'use client';
 
-import { email } from '@/data';
-import useMediaQuery from '@/hooks/useMediaQuery';
-import { useEffect, useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
+import { useCallback, useEffect, useRef } from 'react';
 
-const HoverCircle = ({ children }: { children: React.ReactNode }) => {
+const HoverCircle = ({
+  isActive,
+  text,
+}: {
+  isActive: boolean;
+  text: string;
+}) => {
   const circleRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [copied, setCopied] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
+
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (circleRef.current) {
+        circleRef.current.style.transform = `translate3d(${e.clientX - 64}px, ${
+          e.clientY - 64
+        }px, 0) ${isActive ? 'scale(1)' : 'scale(0)'}`;
+      }
+    },
+    [isActive]
+  );
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-    };
-
     window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard
-      .writeText(email)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      })
-      .catch((err) => {
-        console.error('Failed to copy email: ', err);
-      });
-  };
-
-  if (!isMounted) return null;
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [handleMouseMove]);
 
   return (
-    <div className='relative w-fit mx-auto'>
-      <div className='peer cursor-pointer' onClick={handleCopyEmail}>
-        {children}
-      </div>
-      {isDesktop && (
-        <div
-          ref={circleRef}
-          className='w-36 h-36 bg-accent/75 backdrop-blur-sm rounded-full fixed inset-0 flex items-center justify-center text-black text-xl -translate-x-1/2 -translate-y-1/2 transition-transform will-change-transform duration-300 ease-out scale-0 peer-hover:scale-100 pointer-events-none'
-          style={{
-            top: position.y,
-            left: position.x,
-          }}
-        >
-          {copied ? 'Copied!' : 'Copy Email'}
-        </div>
+    <div
+      ref={circleRef}
+      className={cn(
+        'fixed top-0 left-0 w-36 h-36 bg-accent/75 backdrop-blur-sm rounded-full flex items-center justify-center text-black text-xl pointer-events-none transition-[transform,visibility] duration-300 ease-out',
+        isActive ? 'visible' : 'invisible'
       )}
+      style={{
+        transform: 'translate3d(-100%, -100%, 0)',
+      }}
+    >
+      {text}
     </div>
   );
 };

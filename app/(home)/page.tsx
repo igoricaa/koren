@@ -5,8 +5,8 @@ import { ProjectGallery } from '@/components/gallery/projects-gallery';
 import Services from '@/components/services/services';
 import ServicesMobile from '@/components/services/services-mobile';
 import CalButton from '@/components/cal-button';
-import HoverCircle from '@/components/hover-circle';
 import { AnimatedText } from '@/components/animated-text';
+import HoverCircleWrapper from '@/components/hover-circle-wrapper';
 
 export default function Home() {
   return (
@@ -51,7 +51,7 @@ export default function Home() {
           </p>
         </div>
 
-        <HoverCircle>
+        <HoverCircleWrapper>
           <div className='text-center mt-15 sm:mt-25 lg:mt-40 mb-8 sm:mb-20 lg:mb-28'>
             <h2 className='text-3xl lg:text-5xl 4xl:!text-6xl mb-4'>
               Interested in
@@ -69,7 +69,8 @@ export default function Home() {
               hello@koren.digital
             </Link>
           </div>
-        </HoverCircle>
+        </HoverCircleWrapper>
+
         <div className='flex flex-col sm:flex-row justify-between items-center relative'>
           <div className='order-2 sm:order-1 text-center sm:text-start'>
             <p className='sm:text-xs 4xl:!text-base text-foreground'>
