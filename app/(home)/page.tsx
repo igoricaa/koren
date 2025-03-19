@@ -74,17 +74,7 @@ export default function Home() {
         <div className='flex flex-col sm:flex-row justify-between items-center relative'>
           <div className='order-2 sm:order-1 text-center sm:text-start'>
             <p className='sm:text-xs 4xl:!text-base text-foreground'>
-              Design:{' '}
-              <a
-                href='https://www.nikolapetrovic.co/'
-                target='_blank'
-                className='underline'
-              >
-                Nikola
-              </a>
-            </p>
-            <p className='sm:text-xs 4xl:!text-base text-foreground'>
-              Development: <span className='underline'>Igor</span>
+              [temporary website]
             </p>
           </div>
           <CalButton
@@ -94,10 +84,7 @@ export default function Home() {
           >
             <AnimatedText text='Schedule a meeting' className='leading-5' />
           </CalButton>
-          <div className='order-3 sm:order-3 text-center sm:text-end flex flex-col-reverse sm:flex-col'>
-            <p className='sm:text-xs 4xl:!text-base text-foreground'>
-              [temporary website]
-            </p>
+          <div className='order-3 sm:order-3 text-center sm:text-end'>
             <p className='sm:text-xs 4xl:!text-base text-foreground'>
               © 2024 Koren Studio | All rights reserved
             </p>
